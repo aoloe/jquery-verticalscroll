@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <title>Vertical Scrolling</title>
+  <style>
+    .verticalScroll {
+      position: relative;
+      width:52px;
+      height: 180px;
+      border: 1px solid red;
+      overflow: hidden;
+    }
+
+    .verticalScroll > div {
+      position:absolute;
+      width:50px;
+      border: 1px solid blue;
+    }
+
+    .long {
+      margin-top:10px;
+      height:420px
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="jquery.verticalscroll.js"></script>
+</head>
+<body>
+  <div class="verticalScroll">
+    <div>1 Lorem ipsum dolor sit</div>
+    <div>2 Lorem ipsum dolor sit</div>
+    <div>3 Lorem ipsum dolor sit</div>
+    <div>4 Lorem ipsum dolor sit</div>
+  </div>
+
+  <div class="verticalScroll long">
+    <div>a Lorem ipsum dolor sit</div>
+    <div>b Lorem ipsum dolor sit. Lorem ipsum dolor sit</div>
+    <div>c Lorem ipsum dolor sit</div>
+    <div>d Lorem ipsum dolor sit</div>
+    <div>e Lorem ipsum dolor sit</div>
+    <div>f Lorem ipsum dolor sit</div>
+  </div>
+</body>
+<script>
+  $(document).ready(function() {
+      $(".verticalScroll").verticalScroll();
+  });
+</script>
+</html>
