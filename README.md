@@ -1,2 +1,3 @@
 # jquery-verticalscroll
-A JQuery plugin plugin for scrolling a list of divs
+
+A small and simple JQuery plugin plugin for vertical scrolling a list of DIVs
