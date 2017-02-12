@@ -25,9 +25,10 @@
           var items = [];
           $('div', $elem).each(function(j, divdiv) {
             // if it's above the top, move the item to the bottom
+            var innerHeight = $elem.data("innerHeight");
             var top = parseInt($(divdiv).css("top"));
             if(top < 0) {
-                top = $elem.data("innerHeight") - $(divdiv).height() - padding;
+                top =  innerHeight - $(divdiv).height() - padding;
                 $(divdiv).css("top", top);
             }
             items.push(divdiv);
@@ -37,8 +38,12 @@
           // shift each div by the height of the first (at the css top) item
           shift = parseInt($(items[0]).css("height"));
           $(items).each(function(key, divdiv) {
-            var top = parseInt($(divdiv).css("top"));
-            $(divdiv).animate({ top: (parseInt(top) - shift - padding) }, 25 * shift);
+            var top = parseInt($(divdiv).css("top")) - shift - padding;
+            if (top > innerHeight) {
+              $(divdiv).css("top", top); // don't animate if it's invisible
+            } else {
+              $(divdiv).animate({ top: top }, 25 * shift);
+            }
           });
 
           // when all animations are done, start the next round
