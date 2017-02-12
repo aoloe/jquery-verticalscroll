@@ -4,6 +4,8 @@ A small and simple JQuery plugin for vertical scrolling a list of DIVs.
 
 This plugin is based on this answer on Stackoverflow: <https://stackoverflow.com/a/13222226/5239250>
 
+Working demo: <https://jsfiddle.net/y3uoepxx/>
+
 ## Features:
 
 - Multiple scrolling DIVs on a page.
